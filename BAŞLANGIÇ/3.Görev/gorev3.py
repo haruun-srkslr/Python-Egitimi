@@ -28,10 +28,12 @@ def bol(x, y):
         return "Bölme hatası: Sıfıra bölme yapılamaz."
 
 def fakt(n):
-    if n < 0:
-        return "Negatif sayıların faktöriyeli hesaplanamaz."
-    return math.factorial(n)
-
+    try:
+        if n < 0:
+            return "Negatif sayıların faktöriyeli hesaplanamaz."
+        return math.factorial(n)
+    except OverflowError:
+        print("çok büyük sayı girdin ")
 def ustalma(x, y):
     try:
         return pow(x,y)
@@ -44,28 +46,33 @@ def mod(x, y):
     except ZeroDivisionError:
         return "0'a mod alınamaz"
 
+
 def kokbulma():
-    cont=True
-    
-    while cont:
-        a = float(input("a değerini girin: "))
-        if a==0:
-            cont=True
-            print("a sıfır olamaz")
+    try:        
+        cont=True
+        
+        while cont:
+            a = float(input("a değerini girin: "))
+            if a==0:
+                cont=True
+                print("a sıfır olamaz")
+            else:
+                cont=False
+        b = float(input("b değerini girin: "))
+        c = float(input("c değerini girin: "))
+        diskriminant = b**2 - 4*a*c
+        print(diskriminant)
+        if diskriminant > 0:
+            kok1 = (-b + math.sqrt(diskriminant)) / (2*a)
+            kok2 = (-b - math.sqrt(diskriminant)) / (2*a)
+            return kok1, kok2
+        elif diskriminant == 0:
+            kok = -b / (2*a)
+            return kok,
         else:
-            cont=False
-    b = float(input("b değerini girin: "))
-    c = float(input("c değerini girin: "))
-    diskriminant = b**2 - 4*a*c
-    if diskriminant > 0:
-        kok1 = (-b + math.sqrt(diskriminant)) / (2*a)
-        kok2 = (-b - math.sqrt(diskriminant)) / (2*a)
-        return kok1, kok2
-    elif diskriminant == 0:
-        kok = -b / (2*a)
-        return kok,
-    else:
-        return "Karmaşık kökler var."
+            return "Karmaşık kökler var."
+    except ValueError:
+        print("geçersiz veri tipi")
 
 def menü():
     while True:
@@ -77,8 +84,16 @@ def menü():
             break
 
         if secim in ['1', '2', '3', '4', '7']:
-            s1 = float(input("Birinci sayıyı girin: "))
-            s2 = float(input("İkinci sayıyı girin: "))
+            try:
+                s1 = float(input("Birinci sayıyı girin: "))
+                s2 = float(input("İkinci sayıyı girin: "))
+            
+            except ValueError:
+                print("hatalı veri tipi girdiniz")
+                break
+            except UnboundLocalError:
+                print("hatalı veri tipi girdiniz")
+                break
 
         if secim == '1':
             print("Sonuç:", top(s1, s2))
@@ -89,12 +104,18 @@ def menü():
         elif secim == '4':
             print("Sonuç:", bol(s1, s2))
         elif secim == '5':
-            sayi = int(input("Faktöriyeli hesaplanacak sayıyı girin: "))
-            print("Sonuç:", fakt(sayi))
+            try:
+                sayi = int(input("Faktöriyeli hesaplanacak sayıyı girin: "))
+                print("Sonuç:", fakt(sayi))
+            except ValueError:
+                print("hatalı veri tipi girdiniz")
         elif secim == '6':
-            taban = float(input("Tabanı girin: "))
-            ust = float(input("Üssü girin: "))
-            print("Sonuç:", ustalma(taban, ust))
+            try:
+                taban = float(input("Tabanı girin: "))
+                ust = float(input("Üssü girin: "))
+                print("Sonuç:", ustalma(taban, ust))
+            except ValueError:
+                print("hatalı veri tipi girdiniz")
         elif secim == '7':
             print("Sonuç:", mod(s1, s2))
         elif secim == '8':

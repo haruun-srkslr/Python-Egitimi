@@ -35,10 +35,13 @@ def menu():
 
 
 def ekleme():
-    a=input("kitap adı giriniz")
-    b=input("yazarını giriniz")
-    with open("kitaplar.txt","a",encoding="utf-8") as file:
-        file.write(f"{a} : {b} \n")
+    try:   
+        a=input("kitap adı giriniz")
+        b=input("yazarını giriniz")
+        with open("kitaplar.txt","a",encoding="utf-8") as file:
+            file.write(f"{a} : {b} \n")
+    except ValueError:
+        print("hatalı veri tipi")
 
 def kitaplar():
     with open("kitaplar.txt","r",encoding="utf-8") as file:

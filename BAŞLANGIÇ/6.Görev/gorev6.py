@@ -4,24 +4,31 @@ def fibonacci(n):
         fib.append(fib[-1]+fib[-2])
     return fib
 def sifreleme(metin):
-    n=len(metin)
-    fib = fibonacci(n)
-    
-    sifre=""
-    for i,harf in enumerate(metin):
-        ascii=ord(harf)+fib[i]
-        sifre += chr(ascii)
-    return sifre
+    try:
+        n=len(metin)
+        fib = fibonacci(n)
+        
+        sifre=""
+        for i,harf in enumerate(metin):
+            ascii=ord(harf)+fib[i]
+            sifre += chr(ascii)
+        return sifre
+    except ValueError:
+        print("hatalı veri tipi girdiniz")
 
 def cozum(metin):
-    n=len(metin)
-    fib = fibonacci(n)
+    try:
+        n=len(metin)
+        fib = fibonacci(n)
 
-    cozulmus=""
-    for i,harf in enumerate(metin):
-        ascii=ord(harf)-fib[i]
-        cozulmus += chr(ascii)
-    return cozulmus
+        cozulmus=""
+        for i,harf in enumerate(metin):
+            ascii=ord(harf)-fib[i]
+            cozulmus += chr(ascii)
+        return cozulmus
+    except ValueError:
+        print("hatalı veri tipi girdiniz")
+
 
 def menu():
     while True:

@@ -18,43 +18,63 @@ def menu():
         print("hatalı tuşlama yaptınız")
 
 def kolay():
-    rast_sayi=random.randint(1,10)
-    while True:
-        s1=int(input("sayi tahmin ediniz (1-10)"))
-        if s1==rast_sayi:
-            print("kazandınız")
-            break
-        elif s1>rast_sayi:
-            print("daha küçük")
-        elif s1<rast_sayi:
-            print("daha büyük")
-        else:
-            print("lütfen geçerli bir sayi giriniz")
+    try:
+        rast_sayi=random.randint(1,10)
+        while True:
+            s1=int(input("sayi tahmin ediniz (1-10)"))
+            if s1<1 or s1>10:
+                print("lütfen 1 ve 10 arasında seçim yapınız!")
+            elif s1==rast_sayi:
+                print("kazandınız")
+                break
+            elif s1>rast_sayi:
+                print("daha küçük")
+            elif s1<rast_sayi:
+                print("daha büyük")
+            else:
+                print("lütfen geçerli bir sayi giriniz")
+    except ValueError:
+        print("hatalı veri tipi girdiniz")
 
 def orta():
-    rast_sayi=random.randint(1,100)
-    while True:
-        s1=int(input("sayi tahmin ediniz (1-100)"))
-        if s1==rast_sayi:
-            print("kazandınız")
-            break
-        elif s1>rast_sayi:
-            print("daha küçük")
-        elif s1<rast_sayi:
-            print("daha büyük")
-        else:
-            print("lütfen geçerli bir sayi giriniz")
+    try:
+        rast_sayi=random.randint(1,100)
+        while True:
+            s1=int(input("sayi tahmin ediniz (1-100) "))
+            if s1<1 or s1>100:
+                print("lütfen 1 ve 100 arasında seçim yapınız!")
+            elif s1==rast_sayi:
+                print("kazandınız")
+                break
+            elif s1>rast_sayi:
+                print("daha küçük")
+            elif s1<rast_sayi:
+                print("daha büyük")
+            else:
+                print("lütfen geçerli bir sayi giriniz")
+    except ValueError:
+        print("hatalı seçim yaptınız")
+
+
 def zor():
-    rast_sayi=random.randint(1,1000)
-    while True:
-        s1=int(input("sayi tahmin ediniz (1-1000)"))
-        if s1==rast_sayi:
-            print("kazandınız")
-            break
-        elif s1>rast_sayi:
-            print("daha küçük")
-        elif s1<rast_sayi:
-            print("daha büyük")
-        else:
-            print("lütfen geçerli bir sayi giriniz")
+    try:
+        rast_sayi=random.randint(1,1000)
+        while True:
+            s1=int(input("sayi tahmin ediniz (1-1000) "))
+            if s1<1 or s1>1000:
+                print("lütfen 1 ve 1000 arasında seçim yapınız!")
+            elif s1==rast_sayi:
+                print("kazandınız")
+                break
+            elif s1>rast_sayi:
+                print("daha küçük")
+            elif s1<rast_sayi:
+                print("daha büyük")
+            else:
+                print("lütfen geçerli bir sayi giriniz")
+    except ValueError:
+        print("hatalı veri tipi girdiniz")
+
+
+
 menu()

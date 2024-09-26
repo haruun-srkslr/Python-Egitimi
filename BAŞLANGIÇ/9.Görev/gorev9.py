@@ -8,7 +8,7 @@ def menu():
     if secim=="1":
         oyna()        
     elif secim=="2":
-        quit
+        quit()
     else:
         print("hatalı seçim yaptınız")
 
@@ -25,10 +25,10 @@ def oyna():
             
             """)
         rastgele=random.randint(1,3)
-        s1=input("Taş? Kağıt? Makas?(1/2/3)")
-        while s1 not in ["1","2","3"]:
+        s1=int(input("Taş? Kağıt? Makas?(1/2/3)"))
+        while s1 not in [1,2,3]:
             print("hatalı hamle yaptınız!")
-            s1=input("Taş? Kağıt? Makas?(1/2/3)")
+            s1=int(input("Taş? Kağıt? Makas?(1/2/3)"))
  
         if s1==rastgele:
             print("beraberlik!")
@@ -42,12 +42,14 @@ def oyna():
             print("kaybettin")
         print(kullanici)
         print(bilgisayar)
-        secim=input("devam etmek ister misiniz(e/h)")  
-        if secim=="e" or secim=="E":
-            print("devam ediliyor...")
-        elif secim=="h" or secim=="H":
-            break
-        else:
-            print("hatalı tuşlama yapıldı!")  
+        while True:
+            secim=input("devam etmek ister misiniz(e/h)").lower() 
+            if secim=="e":
+                print("devam ediliyor...")
+                break
+            elif secim=="h":
+                quit()
+            else:
+                print("hatalı tuşlama yapıldı!")  
             
 menu()

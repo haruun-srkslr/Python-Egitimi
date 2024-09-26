@@ -74,6 +74,9 @@ def urunCıkar():
         except ValueError:
             print("geçersiz ürün sayısı ? ")
             input("devam etmek için ENTER'a basınız")
+    else:
+        print("böyle bir ürün bulunamadı !")
+        input("devam etmek için ENTER'a basınız")
 def AzOlan():
     if not stok:
         print("listede ürün yok")
