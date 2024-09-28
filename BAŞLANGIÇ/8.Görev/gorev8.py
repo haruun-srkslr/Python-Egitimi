@@ -26,6 +26,9 @@ def ort_kelime_uzunlugu(metin):
 def menü():
     print("metin analiz programı")
     metin=input("metni giriniz")
+    if not metin:
+        print("boş metin girdiniz !")
+        return
     toplam_kelime=kelime_sayisi(metin)
     en_sik=enSikKelime(metin)
     cumle_sayi=cumle_sayisi(metin)

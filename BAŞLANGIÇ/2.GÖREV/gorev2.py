@@ -103,24 +103,24 @@ def sicaklik():
         
         der=float(input("derece giriniz"))
         
-        if b1=="1" and b2=="2":
+        if b1==1 and b2==2:
             sonuc=der*1.8+32
             return sonuc
-        elif b1=="2" and b2=="1":
+        elif b1==2 and b2==1:
             sonuc=(der-32)/1.8
             return sonuc
-        elif b1=="1" and b2=="3":
+        elif b1==1 and b2==3:
             sonuc=der+273.15
             return sonuc
-        elif b1=="3" and b2=="1":
+        elif b1==3 and b2==1:
             sonuc=der-273.15
             return sonuc
-        elif b1=="2" and b2=="3":
+        elif b1==2 and b2==3:
             sonuc=der+457.87
             return sonuc
-        elif b1=="3" and b2=="2":
+        elif b1==3 and b2==2:
             sonuc=der-457.87
-            return sonuc        
+            return sonuc              
     except ValueError:
         print("hatalı veri tipi ! ")
 def agirlik():

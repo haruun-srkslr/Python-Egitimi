@@ -25,7 +25,11 @@ def oyna():
             
             """)
         rastgele=random.randint(1,3)
-        s1=int(input("Taş? Kağıt? Makas?(1/2/3)"))
+        try:
+            s1=int(input("Taş? Kağıt? Makas?(1/2/3)"))
+        except ValueError:
+            print("hatalı veri tipi girdiniz")
+            continue
         while s1 not in [1,2,3]:
             print("hatalı hamle yaptınız!")
             s1=int(input("Taş? Kağıt? Makas?(1/2/3)"))

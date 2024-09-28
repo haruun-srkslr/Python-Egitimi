@@ -25,9 +25,12 @@ def menu():
 def not_oku():
     try:
         with open("notlar.txt","r",encoding="utf-8")as file:
-            for yazi in file:
-                print(yazi,end='')
-            file.close()
+            satirlar =file.readlines()
+            if not satirlar:
+                print("henüz not eklenmedi")
+            else:
+                for yazi in satirlar:
+                    print(yazi,end='')
     except FileNotFoundError:
         with open("notlar.txt","w",encoding="utf-8"):
             print("dosya oluşturuldu!")
