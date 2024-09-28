@@ -15,38 +15,3 @@ Kullanıcı, aşağıdaki seçeneklerden birini seçerek stok yönetim sistemine
 
 
 
-```python
-stok = {}
-
-def menü():
-    while True:
-        print("""
-    1.ÜRÜN EKLE
-    2.ÜRÜNLERİ LİSTELE
-    3.ÜRÜNLERİ ÇIKAR
-    4.AZ OLAN ÜRÜNLERİ LİSTELE
-    Q.ÇIKIŞ
-        """)
-        secim = input("---SEÇİM YAPINIZ(1-4/Q)---")
-        # Diğer fonksiyonlar burada çağrılmaktadır.
-
-def urunEkle():
-    ad = input("Eklenecek ürünü giriniz: ").strip()
-    # Ürün ekleme işlemleri
-
-def urunListele():
-    if not stok:
-        print("Ürün bulunamadı")
-    else:
-        for urun, adet in stok.items():
-            print(f"{urun}: {adet}")
-
-def urunCıkar():
-    urunListele()
-    # Ürün çıkarma işlemleri
-
-def AzOlan():
-    # Az kalan ürünleri listeleme işlemleri
-
-menü()
-
