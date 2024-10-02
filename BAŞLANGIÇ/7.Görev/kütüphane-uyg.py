@@ -43,9 +43,12 @@ def ekleme():
         print("hatalı veri tipi")
 
 def kitaplar():
-    with open("kitaplar.txt","r",encoding="utf-8") as file:
-        for kitap in file:
-            print(kitap)
+    try:
+        with open("kitaplar.txt","r",encoding="utf-8") as file:
+            for kitap in file:
+                print(kitap)
+    except FileNotFoundError:
+        print("kitaplar.txt dosyası yok oluşturduktan sonra işlem yapabilirsiniz kitap ekle menüsünden otomatik oluşturulur")
 
 def odunc():
     kitaplar =[]

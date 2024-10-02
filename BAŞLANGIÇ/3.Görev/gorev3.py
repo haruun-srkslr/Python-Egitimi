@@ -39,6 +39,8 @@ def ustalma(x, y):
         return pow(x,y)
     except ValueError:
         print("tam sayı giriniz")
+    except OverflowError:
+        print("çok büyük sayı girdiniz")
 def mod(x, y):
     
     try:
