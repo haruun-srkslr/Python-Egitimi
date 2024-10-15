@@ -1,0 +1,28 @@
+{
+  "transactions": [
+    {
+      "type": "income",
+      "amount": 300,
+      "category": "kk",
+      "date": "2004-01-09"
+    },
+    {
+      "type": "income",
+      "amount": 450,
+      "category": "km",
+      "date": "2003-01-04"
+    },
+    {
+      "type": "expense",
+      "amount": 500,
+      "category": "kkm",
+      "date": "2004-01-05"
+    },
+    {
+      "type": "income",
+      "amount": 1120,
+      "category": "jameika",
+      "date": "2005-01-07"
+    }
+  ]
+}
